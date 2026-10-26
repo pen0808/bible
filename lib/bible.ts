@@ -18,19 +18,21 @@ export type BibleSearchHit = {
 const bibleCache = new Map<string, Promise<BibleBook[]>>();
 const searchIndexCache = new Map<string, BibleSearchHit[]>();
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const versionFiles: Record<string, string> = {
-  kjv: "/scripture/kjv.json",
-  web: "/scripture/web.json",
-  asv: "/scripture/asv.json",
-  bsb: "/scripture/bsb.json",
-  gnb: "/scripture/web.json",
+  kjv: `${basePath}/scripture/kjv.json`,
+  web: `${basePath}/scripture/web.json`,
+  asv: `${basePath}/scripture/asv.json`,
+  bsb: `${basePath}/scripture/bsb.json`,
+  gnb: `${basePath}/scripture/web.json`,
 };
 
 export async function loadBible(version = "kjv"): Promise<BibleBook[]> {
   const cached = bibleCache.get(version);
   if (cached) return cached;
 
-  const url = versionFiles[version] ?? "/scripture/kjv.json";
+  const url = versionFiles[version] ?? `${basePath}/scripture/kjv.json`;
   const promise = fetch(url, { cache: "force-cache" })
     .then((response) => {
       if (!response.ok) throw new Error("Unable to load Scripture.");

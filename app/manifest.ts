@@ -1,14 +1,18 @@
 import type { MetadataRoute } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    id: "/",
+    id: `${basePath}/`,
     name: "PENBible — A quiet place in the Word",
     short_name: "PENBible",
     description:
       "Daily devotion, a word to carry, guided stillness, and the full Bible in one calm space.",
-    start_url: "/",
-    scope: "/",
+    start_url: `${basePath}/`,
+    scope: `${basePath}/`,
     display: "standalone",
     background_color: "#f4efe5",
     theme_color: "#173d30",
@@ -16,25 +20,25 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["books", "education", "lifestyle"],
     icons: [
       {
-        src: "/icons/icon-192.png",
+        src: `${basePath}/icons/icon-192.png`,
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icons/icon-512.png",
+        src: `${basePath}/icons/icon-512.png`,
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icons/icon-maskable-512.png",
+        src: `${basePath}/icons/icon-maskable-512.png`,
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",
       },
       {
-        src: "/icon.svg",
+        src: `${basePath}/icon.svg`,
         sizes: "any",
         type: "image/svg+xml",
         purpose: "any",
@@ -44,20 +48,20 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Today's devotion",
         short_name: "Today",
-        url: "/",
-        icons: [{ src: "/icons/icon-192.png", sizes: "192x192" }],
+        url: `${basePath}/`,
+        icons: [{ src: `${basePath}/icons/icon-192.png`, sizes: "192x192" }],
       },
       {
         name: "Open the Bible",
         short_name: "Bible",
-        url: "/bible",
-        icons: [{ src: "/icons/icon-192.png", sizes: "192x192" }],
+        url: `${basePath}/bible/`,
+        icons: [{ src: `${basePath}/icons/icon-192.png`, sizes: "192x192" }],
       },
       {
         name: "Your journal",
         short_name: "Journal",
-        url: "/journal",
-        icons: [{ src: "/icons/icon-192.png", sizes: "192x192" }],
+        url: `${basePath}/journal/`,
+        icons: [{ src: `${basePath}/icons/icon-192.png`, sizes: "192x192" }],
       },
     ],
   };
