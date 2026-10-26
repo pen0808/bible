@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="32" x2="448" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#245744"/>
+      <stop offset=".55" stop-color="#173d30"/>
+      <stop offset="1" stop-color="#0a241b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(256 214) rotate(90) scale(220)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d5b372" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#d5b372" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="40" y="290" width="432" height="210" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#04110c" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <rect x="18" y="18" width="476" height="476" rx="103" fill="none" stroke="#d5b372" stroke-opacity=".32" stroke-width="2"/>
+  <circle cx="256" cy="220" r="184" fill="url(#glow)"/>
+  <circle cx="256" cy="218" r="166" fill="none" stroke="#d5b372" stroke-opacity=".13" stroke-width="2"/>
+
+  <g filter="url(#shadow)">
+    <path d="M256 82c49 62 82 122 82 172 0 55-35 96-82 120-47-24-82-65-82-120 0-50 33-110 82-172Z" fill="#d5b372"/>
+    <path d="M256 134c31 42 50 84 50 120 0 36-21 65-50 82-29-17-50-46-50-82 0-36 19-78 50-120Z" fill="#0b241b"/>
+    <path d="M256 236v116" stroke="#d5b372" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="256" cy="295" r="12" fill="#d5b372"/>
+  </g>
+
+  <path d="M76 326c57-19 118-8 180 40v88c-58-35-117-45-180-26v-102Z" fill="#f7f1e4"/>
+  <path d="M436 326c-57-19-118-8-180 40v88c58-35 117-45 180-26v-102Z" fill="#f7f1e4"/>
+  <path d="M256 365v89" stroke="#d5b372" stroke-width="9" stroke-linecap="round"/>
+  <path d="M110 367c32-4 65 3 96 19M402 367c-32-4-65 3-96 19" stroke="#173d30" stroke-opacity=".28" stroke-width="6" stroke-linecap="round"/>
+  <path d="M122 398c27-2 53 3 76 14M390 398c-27-2-53 3-76 14" stroke="#173d30" stroke-opacity=".16" stroke-width="5" stroke-linecap="round"/>
+</svg>
